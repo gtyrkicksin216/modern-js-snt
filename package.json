@@ -1,0 +1,22 @@
+{
+  "name": "modern-js-snt",
+  "version": "0.1.0",
+  "description": "An example of how to get started with modern frontend tools with node and npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+		"lint": "eslint '*/**/*.{js,ts}' --fix",
+		"start": "tsc && node ./dist/app.js"
+  },
+  "author": "Ryan Wood",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
+    "@typescript-eslint/parser": "^4.6.1",
+    "eslint": "^7.12.1",
+    "typescript": "^4.0.5"
+  }
+}
