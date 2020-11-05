@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-		"lint": "eslint '*/**/*.{js,ts}' --fix",
-		"start": "tsc && node ./dist/app.js"
+    "lint": "eslint '*/**/*.{js,ts}' --fix",
+    "start": "tsc && node ./dist/app.js"
   },
   "author": "Ryan Wood",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.0"
+    "axios": "^0.21.0",
+    "chalk": "^4.1.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.6.1",

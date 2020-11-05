@@ -1,4 +1,5 @@
 import Axios, { AxiosInstance } from 'axios';
+import chalk from 'chalk';
 
 interface CoindeskResponse {
 	bpi: { [key: string]: number },
@@ -34,13 +35,13 @@ async function getPriceChange (): Promise<void> {
 
 function getPriceDifference (todaysPrice: number, yesterdaysPrice: number): void {
 	const difference = parseFloat((todaysPrice - yesterdaysPrice).toFixed(4));
-	const isNegative = difference === Math.abs(difference);
+	const isNegative = !(difference === Math.abs(difference));
 
 	console.log(`
-	Yesteray's Price:           ${yesterdaysPrice}
-	Today's Price:              ${todaysPrice}
+	${chalk.yellowBright('Yesteray\'s Price:')}           ${chalk.yellowBright(yesterdaysPrice)}
+	${chalk.magentaBright('Today\'s Price:')}              ${chalk.magentaBright(todaysPrice)}
 	======================================
-	Change:                     ${difference}
+	${isNegative ? chalk.bold.red('Down:  ') : chalk.bold.green('Up:    ')}                     ${isNegative ? chalk.bold.red(difference) : chalk.bold.green(difference)}
 	`);
 }
 
